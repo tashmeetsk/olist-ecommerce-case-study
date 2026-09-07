@@ -1,3 +1,4 @@
 data/raw/*
 !data/raw/.gitkeep
 !data/raw/count_check.py
+.env

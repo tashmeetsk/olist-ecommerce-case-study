@@ -1,5 +1,20 @@
 -- ============================================
--- BRANCH 4: Seller — shared base metrics
+-- BRANCH 4: Seller
+-- Finding: Bad reviews are heavily CONCENTRATED — worst 10% of sellers (309/3,090) 
+-- account for ~73% of all bad reviews.
+-- Ranking by raw count conflates scale with quality: top sellers by volume sit 
+-- near/below the 14.69% baseline rate (13.85-14.99%), while a rate-based screen 
+-- (min. 20 orders) isolates a distinct set of structurally broken sellers — 
+-- 34-65% bad-review rate, avg score 2.10-3.19 — invisible in a volume-only view.
+-- Cross-checked delay for the worst-rate sellers: mixed result — roughly half 
+-- show elevated late rates (up to 49% vs ~8% baseline), the other half ship 
+-- on-time/early (0% late) yet still score 2.10-3.00, pointing to non-delivery causes.
+-- Conclusion: Seller quality is a primary driver with TWO distinct profiles — 
+-- large sellers adding volume at normal rates (scale issue), and low/mid-volume 
+-- sellers with broken quality independent of delivery (rate issue).
+-- ============================================
+
+-- ============================================
 -- 4a. CONCENTRATION — are bad reviews concentrated in a few sellers?
 -- ============================================
 WITH seller_metrics AS (

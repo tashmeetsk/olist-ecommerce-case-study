@@ -32,8 +32,7 @@
   23 had `order_delivered_customer_date` before `order_delivered_carrier_date` — both 
   logically impossible sequences. Flagged via a `date_anomaly_flag` boolean column on 
   `orders` (excluded from delivery-duration analysis, retained for revenue/review analysis).
-- 2 order_payments rows had `payment_installments = 0` — [note your final choice: 
-  excluded from the insert / flagged].
+- 2 order_payments rows had `payment_installments = 0` — excluded from the insert.
 
 ## Known Limitations
 - `geolocation` has no unique key and duplicate zip/lat/lng rows are expected 

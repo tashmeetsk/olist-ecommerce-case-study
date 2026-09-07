@@ -1,3 +1,20 @@
+-- ============================================
+-- BRANCH 5: Geography
+-- Finding: Clear regional pattern — worst late/review states: AL (21% late, 
+-- 23.91% bad), MA (17% late, 21.72% bad), SE (15% late, 21.78% bad), CE (13% 
+-- late, 19.86% bad), concentrated in the North/Northeast. Best: SP (4% late, 
+-- 12.63% bad, 41,746 orders), PR (4% late, 12.49% bad), MG (4% late, 13.30% bad).
+-- Distance cross-check (Haversine, customer-to-seller): distance does NOT cleanly 
+-- predict this. Remote Amazon states (AM 2646km, AC 2642km, RR 3249km) show LOW 
+-- late rates (3-11%); AL, much closer (1842km), is the WORST performer. RJ, at 
+-- only 487km (near SP's 247km), still shows 12% late / 20.74% bad.
+-- Conclusion: Delay/dissatisfaction is a genuine REGIONAL LOGISTICS-QUALITY 
+-- issue, not explained by physical distance. Northeast cluster underperforms 
+-- despite not being most remote; RJ underperforms despite proximity — points to 
+-- fixable infrastructure/last-mile gaps rather than an unavoidable distance penalty.
+-- ============================================
+
+
 WITH delay_calc AS (
     SELECT 
         order_id,
