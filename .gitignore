@@ -2,3 +2,4 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/count_check.py
 .env
+dashboard/olist_ecommerce_dashboard.pbix
